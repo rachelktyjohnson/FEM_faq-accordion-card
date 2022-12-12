@@ -10,6 +10,12 @@ p {
   font-size: 0.85rem;
   padding: 15px 0;
 }
+@media (min-width: 600px) {
+  p {
+    padding: 20px 0;
+    font-size: 0.9rem;
+  }
+}
 
 body {
   display: flex;
@@ -17,26 +23,60 @@ body {
   min-height: 100vh;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(#af67e9, #6565e7);
+  background: linear-gradient(hsl(273deg, 75%, 66%), hsl(240deg, 73%, 65%));
 }
 
 main {
   max-width: 335px;
   width: 100%;
 }
+@media (min-width: 600px) {
+  main {
+    max-width: 1100px;
+  }
+}
 main .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: white url("images/bg-pattern-mobile.svg") no-repeat center top;
   padding: 20px;
   margin-top: 150px;
   border-radius: 25px;
 }
-main .card img {
+@media (min-width: 600px) {
+  main .card {
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    padding: 50px 100px 50px 0;
+    margin: 0;
+    overflow: hidden;
+  }
+}
+@media (min-width: 600px) {
+  main .card {
+    background: white url("images/bg-pattern-desktop.svg") no-repeat -370% 75%;
+  }
+}
+main .card .images .illustration {
   margin-top: -125px;
   width: 225px;
+}
+@media (min-width: 600px) {
+  main .card .images .illustration {
+    width: 100%;
+    margin: 0;
+    margin-left: -100px;
+  }
+}
+main .card .images .desktop-box {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  left: 75px;
+  top: 45%;
+  transition: left 0.2s ease-in-out;
 }
 main .card .content {
   margin: 30px auto;
@@ -45,16 +85,31 @@ main .card .content {
 main .card .content h1 {
   text-align: center;
 }
+@media (min-width: 600px) {
+  main .card .content h1 {
+    text-align: left;
+    font-size: 2rem;
+  }
+}
 main .card .content .question-cards {
   margin-top: 50px;
 }
+@media (min-width: 600px) {
+  main .card .content .question-cards {
+    margin-top: 25px;
+  }
+}
 main .card .content .question-cards .question-card {
   overflow: hidden;
-  border-bottom: 1px solid #e7e7e9;
+  border-bottom: 1px solid hsl(240deg, 5%, 91%);
 }
 main .card .content .question-cards .question-card .question {
   display: flex;
   justify-content: space-between;
+}
+main .card .content .question-cards .question-card .question:hover {
+  color: hsl(14deg, 88%, 65%);
+  cursor: pointer;
 }
 main .card .content .question-cards .question-card .question:after {
   content: url("images/icon-arrow-down.svg");
@@ -63,7 +118,7 @@ main .card .content .question-cards .question-card .question:after {
 }
 main .card .content .question-cards .question-card .answer {
   max-height: 0;
-  color: #787887;
+  color: hsl(240deg, 6%, 50%);
   line-height: 1.5;
   padding: 0;
   transition: all 0.4s ease-in-out;
