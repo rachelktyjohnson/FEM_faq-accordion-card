@@ -29,6 +29,7 @@ body {
 main {
   max-width: 335px;
   width: 100%;
+  position: relative;
 }
 @media (min-width: 600px) {
   main {
@@ -71,12 +72,17 @@ main .card .images .illustration {
   }
 }
 main .card .images .desktop-box {
-  width: 200px;
-  height: auto;
-  position: absolute;
-  left: 75px;
-  top: 45%;
-  transition: left 0.2s ease-in-out;
+  display: none;
+}
+@media (min-width: 600px) {
+  main .card .images .desktop-box {
+    display: block;
+    height: auto;
+    position: absolute;
+    left: -100px;
+    top: 45%;
+    transition: left 0.2s ease-in-out;
+  }
 }
 main .card .content {
   margin: 30px auto;

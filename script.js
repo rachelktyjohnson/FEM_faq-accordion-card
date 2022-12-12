@@ -9,12 +9,12 @@ question_cards.addEventListener('click', (event)=>{
 
 question_cards.addEventListener('mouseover', (event)=>{
     if (event.target.className === "question"){
-        question_box.style.left = "35px";
+        question_box.style.left = "-130px";
     }
 })
 
 question_cards.addEventListener('mouseout', (event)=>{
     if (event.target.className === "question"){
-        question_box.style.left = "75px";
+        question_box.style.left = "-100px";
     }
 })
